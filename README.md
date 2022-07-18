@@ -1,6 +1,6 @@
   # Parking Manager
 
-service that can decide whether to approve or decline car entrance to parking lot
+service that can decide whether to approve or decline car entrance to a parking lot
 
 ## Description
 
