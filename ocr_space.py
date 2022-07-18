@@ -14,18 +14,18 @@ class OcrSpace:
                         Defaults to 'en'.
         :return: Result in JSON format.
         """
-
         payload = {'isOverlayRequired': overlay,
                    'apikey': self.api_key,
                    'language': language,
-                   'OCREngine': 3
+                   'OCREngine': 2
 
                    }
         with open(filename, 'rb') as f:
             r = requests.post('https://api.ocr.space/parse/image',
                               files={filename: f},
-                              data=payload,
+                              data=payload, timeout=5000
                               )
+
         return r.content.decode()
 
     def ocr_space_url(self, url, overlay=False, language='eng'):
@@ -44,7 +44,7 @@ class OcrSpace:
                    'isOverlayRequired': overlay,
                    'apikey': self.api_key,
                    'language': language,
-                   'OCREngine': 3
+                   'OCREngine': 2
                    }
         r = requests.post('https://api.ocr.space/parse/image',
                           data=payload

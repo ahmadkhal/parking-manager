@@ -10,13 +10,8 @@ class DBManager:
         self.db = self.client.admin
         self.parking_collection = self.db['Parking']
 
-    def add_decision_to_database(self, plate_number, is_approved):
+    def add_decision_to_database(self, plate_number, is_approved, category):
         utcnow = datetime.utcnow()
-        res = self.parking_collection.insert_one(
-            {"plate number": plate_number, "decision": is_approved, "date": utcnow, "time": datetime.timestamp(utcnow)})
-        cursor = self.parking_collection.find({})
-        for doc in cursor:
-            print(doc)
-
-
+        self.parking_collection.insert_one(
+            {"Plate Number": plate_number, "Decision": is_approved, "Category": category, "timestamp": utcnow})
 
