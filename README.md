@@ -24,7 +24,8 @@ Rest Api service which gets an image of an Israeli license plate and returns a d
 ### Executing program
 
 * Download the project from github
-* create venv in python and install all the requirments above
+* Create venv in python and install all the requirments above
+* Run the main in parking_manager.py 
 
 ## Authors
 
